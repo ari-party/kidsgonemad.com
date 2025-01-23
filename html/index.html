@@ -30,7 +30,7 @@
         user-select: none;
       }
 
-      a {
+      a.bottom {
         position: absolute;
         top: calc(100% - 8px);
         left: 50%;
@@ -42,13 +42,15 @@
     </style>
   </head>
   <body>
-    <img id="img" src="" alt="kidsgonemad" />
+    <a href="https://isoxo.lnk.to/kidsgonemad">
+      <img id="img" src="" alt="kidsgonemad" />
+    </a>
     <script>
       const preloads = document.querySelectorAll("link[rel=preload]");
       const random = Math.floor(Math.random() * preloads.length);
       img.src = preloads[random].href;
     </script>
 
-    <a href="https://astrid.exposed">astrid.exposed</a>
+    <a class="bottom" href="https://astrid.exposed">astrid.exposed</a>
   </body>
 </html>
