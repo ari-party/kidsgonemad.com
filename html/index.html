@@ -54,7 +54,7 @@
   </head>
   <body>
     <main>
-      <a href="https://isoxo.lnk.to/kidsgonemad">
+      <a id="img-link" href="https://isoxo.lnk.to/kidsgonemad">
         <img id="img" src="" alt="kidsgonemad" />
       </a>
       <script>
@@ -65,13 +65,25 @@
     </main>
 
     <footer>
-      <a id="link" class="link" href="https://astrid.exposed">astrid.exposed</a>
-      <script>
-        const search = window.location.search;
-        const params = new URLSearchParams(window.location.search);
-        if (params.get("nolink") !== null)
-          document.getElementById("link").style.display = "none";
-      </script>
+      <a id="footer-link" class="link" href="https://astrid.exposed">
+        astrid.exposed
+      </a>
     </footer>
+
+    <script>
+      const search = window.location.search;
+      const params = new URLSearchParams(window.location.search);
+
+      function setEmbedded() {
+        document.getElementById("img-link").removeAttribute("href");
+        document.getElementById("footer-link").style.display = "none";
+      }
+
+      if (params.get("embedded") !== null) setEmbedded();
+
+      window.wallpaperPropertyListener = {
+        applyUserProperties: setEmbedded,
+      };
+    </script>
   </body>
 </html>
