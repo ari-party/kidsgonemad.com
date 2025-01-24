@@ -13,44 +13,59 @@
     <link rel="preload" href="gif/2.gif" as="image" />
 
     <style>
-      * {
+      html,
+      body {
         margin: 0;
         padding: 0;
-      }
-
-      body {
         background: black;
+        height: 100%;
+        overflow: hidden;
       }
 
-      img {
+      main {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+
+      img {
         user-select: none;
       }
 
-      a.bottom {
+      footer {
         position: absolute;
-        top: calc(100% - 8px);
-        left: 50%;
-        transform: translate(-50%, -100%);
-        color: #0c0c0c;
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+
+        padding-bottom: 8px;
+      }
+
+      a.link {
+        color: #0e0e0e;
         font-family: monospace;
         text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <a href="https://isoxo.lnk.to/kidsgonemad">
-      <img id="img" src="" alt="kidsgonemad" />
-    </a>
-    <script>
-      const preloads = document.querySelectorAll("link[rel=preload]");
-      const random = Math.floor(Math.random() * preloads.length);
-      img.src = preloads[random].href;
-    </script>
+    <main>
+      <a href="https://isoxo.lnk.to/kidsgonemad">
+        <img id="img" src="" alt="kidsgonemad" />
+      </a>
+      <script>
+        const preloads = document.querySelectorAll("link[rel=preload]");
+        const random = Math.floor(Math.random() * preloads.length);
+        img.src = preloads[random].href;
+      </script>
+    </main>
 
-    <a class="bottom" href="https://astrid.exposed">astrid.exposed</a>
+    <footer>
+      <a class="link" href="https://astrid.exposed">astrid.exposed</a>
+    </footer>
   </body>
 </html>
